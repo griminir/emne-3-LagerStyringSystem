@@ -20,7 +20,12 @@ namespace emne_3_LagerStyringSystem
             Garanti = garanti;
         }
 
-        public static IProduct AddProduct(string name, double price, string granati)
+        public Elektronikk()
+        {
+            
+        }
+
+        public IProduct AddProduct(string name, double price, string granati)
         {
             return new Elektronikk(name, price, granati);
         }

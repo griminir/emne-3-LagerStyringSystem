@@ -10,5 +10,10 @@ namespace emne_3_LagerStyringSystem
     {
         string Navn { get; set; }
         double Pris { get; set; }
+
+        IProduct AddProduct(String name, double price, string attribute)
+        {
+            return AddProduct(name, price, attribute);
+        }
     }
 }

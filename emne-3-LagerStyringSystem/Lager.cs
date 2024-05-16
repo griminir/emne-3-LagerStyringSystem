@@ -8,33 +8,25 @@ namespace emne_3_LagerStyringSystem
 {
     public class Lager
     {
-        private List<IProduct> _products = new List<IProduct>();
+        private List<IProduct> _items = new List<IProduct>();
+        private IProduct _Product;
 
-        public void AddProduct(string type, string name, double price, string attribute)
+        public void AddProduct(IProduct product, string name, double price, string attribute)
         {
-            if (type == "klær")
-            {
-                _products.Add(Klær.AddProduct(name, price, attribute));
-            }
-            else if (type == "elektronikk")
-            {
-                _products.Add(Elektronikk.AddProduct(name, price, attribute));
-            }
-            else if (type == "matvare")
-            {
-                _products.Add(Matvare.AddProduct(name, price, attribute));
-            }
+            _Product = product;
+
+            _items.Add(_Product.AddProduct(name, price, attribute));
         }
 
         public void RemoveItem(string name)
         {
-            var itemToRemove = _products.Find(n =>n.Navn == name);
-            _products.Remove(itemToRemove);
+            var itemToRemove = _items.Find(n =>n.Navn == name);
+            _items.Remove(itemToRemove);
         }
 
         public void ShowWares()
         {
-            foreach (IProduct product in _products)
+            foreach (IProduct product in _items)
             {
                 Console.WriteLine($"{product.Navn} {product.Pris} ");
             }

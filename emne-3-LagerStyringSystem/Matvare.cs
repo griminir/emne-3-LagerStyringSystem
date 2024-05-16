@@ -20,7 +20,12 @@ namespace emne_3_LagerStyringSystem
             Utløpsdato = utløpsdato;
         }
 
-        public static IProduct AddProduct(string name, double price,string utløpsdato)
+        public Matvare()
+        {
+            
+        }
+
+        public IProduct AddProduct(string name, double price,string utløpsdato)
         {
             return new Matvare(name, price, utløpsdato);
         }

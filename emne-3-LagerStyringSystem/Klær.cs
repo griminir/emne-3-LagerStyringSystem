@@ -21,7 +21,12 @@ namespace emne_3_LagerStyringSystem
             Størrelse = size;
         }
 
-        public static IProduct AddProduct(string name, double price, string size)
+        public Klær()
+        {
+            
+        }
+
+        public IProduct AddProduct(string name, double price, string size)
         {
             return new Klær(name, price, size);
         }
