@@ -13,7 +13,7 @@ namespace emne_3_LagerStyringSystem
 
         IProduct AddProduct(String name, double price, string attribute)
         {
-            return AddProduct(name, price, attribute);
+            return AddProduct(name, price, attribute); // litt usikker på hvordan detter funker? 
         }
     }
 }
